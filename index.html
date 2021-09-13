@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Welcome to St Stephens School, Habra</title>
+<link rel="stylesheet" type="text/css" href="https://www.ststephenshabra.com/wp-content/themes/twentyfourteen/css/style.css" />
+<link rel="shortcut icon" href="https://www.ststephenshabra.com/wp-content/themes/twentyfourteen/images/favicon.png" />
+
+<script src="https://www.ststephenshabra.com/wp-content/themes/twentyfourteen/js/jquery.min.js"></script>
+<script src="https://www.ststephenshabra.com/wp-content/themes/twentyfourteen/js/jssor.js"></script>
+<script src="https://www.ststephenshabra.com/wp-content/themes/twentyfourteen/js/jssor.slider.js"></script>
+<script>
+
+        jQuery(document).ready(function ($) {
+
+            var _SlideshowTransitions = [
+            //Fade
+            { $Duration: 1200, $Opacity: 2 }
+            ];
+
+            var options = {
+                $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+                $AutoPlaySteps: 1,                                  //[Optional] Steps to go for each navigation request (this options applys only when slideshow disabled), the default value is 1
+                $AutoPlayInterval: 3000,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+                $PauseOnHover: 1,                               //[Optional] Whether to pause when mouse over if a slider is auto playing, 0 no pause, 1 pause for desktop, 2 pause for touch device, 3 pause for desktop and touch device, 4 freeze for desktop, 8 freeze for touch device, 12 freeze for desktop and touch device, default value is 1
+
+                $ArrowKeyNavigation: true,   			            //[Optional] Allows keyboard (arrow key) navigation or not, default value is false
+                $SlideDuration: 500,                                //[Optional] Specifies default duration (swipe) for slide in milliseconds, default value is 500
+                $MinDragOffsetToSlide: 20,                          //[Optional] Minimum drag offset to trigger slide , default value is 20
+                //$SlideWidth: 600,                                 //[Optional] Width of every slide in pixels, default value is width of 'slides' container
+                //$SlideHeight: 300,                                //[Optional] Height of every slide in pixels, default value is height of 'slides' container
+                $SlideSpacing: 0, 					                //[Optional] Space between each slide in pixels, default value is 0
+                $DisplayPieces: 1,                                  //[Optional] Number of pieces to display (the slideshow would be disabled if the value is set to greater than 1), the default value is 1
+                $ParkingPosition: 0,                                //[Optional] The offset position to park slide (this options applys only when slideshow disabled), default value is 0.
+                $UISearchMode: 1,                                   //[Optional] The way (0 parellel, 1 recursive, default value is 1) to search UI components (slides container, loading screen, navigator container, arrow navigator container, thumbnail navigator container etc).
+                $PlayOrientation: 1,                                //[Optional] Orientation to play slide (for auto play, navigation), 1 horizental, 2 vertical, 5 horizental reverse, 6 vertical reverse, default value is 1
+                $DragOrientation: 3,                                //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+
+                $SlideshowOptions: {                                //[Optional] Options to specify and enable slideshow or not
+                    $Class: $JssorSlideshowRunner$,                 //[Required] Class to create instance of slideshow
+                    $Transitions: _SlideshowTransitions,            //[Required] An array of slideshow transitions to play slideshow
+                    $TransitionsOrder: 1,                           //[Optional] The way to choose transition to play slide, 1 Sequence, 0 Random
+                    $ShowLink: true                                    //[Optional] Whether to bring slide link on top of the slider when slideshow is running, default value is false
+                },
+
+                $BulletNavigatorOptions: {                                //[Optional] Options to specify and enable navigator or not
+                    $Class: $JssorBulletNavigator$,                       //[Required] Class to create navigator instance
+                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 1,                                 //[Optional] Auto center navigator in parent container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1,                                      //[Optional] Steps to go for each navigation request, default value is 1
+                    $Lanes: 1,                                      //[Optional] Specify lanes to arrange items, default value is 1
+                    $SpacingX: 10,                                   //[Optional] Horizontal space between each item in pixel, default value is 0
+                    $SpacingY: 10,                                   //[Optional] Vertical space between each item in pixel, default value is 0
+                    $Orientation: 1                                 //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
+                },
+
+                $ArrowNavigatorOptions: {
+                    $Class: $JssorArrowNavigator$,              //[Requried] Class to create arrow navigator instance
+                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $Steps: 1                                       //[Optional] Steps to go for each navigation request, default value is 1
+                }
+            };
+            var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizes
+            function ScaleSlider() {
+                var parentWidth = jssor_slider1.$Elmt.parentNode.clientWidth;
+                if (parentWidth)
+                    jssor_slider1.$ScaleWidth(Math.min(parentWidth, 600));
+                else
+                    window.setTimeout(ScaleSlider, 30);
+            }
+            ScaleSlider();
+
+            $(window).bind("load", ScaleSlider);
+            $(window).bind("resize", ScaleSlider);
+            $(window).bind("orientationchange", ScaleSlider);
+            //responsive code end
+        });
+    </script>
+</head>
+<body>
+	<div id="head">
+		<div class="header">
+			<div id="stephensLogo" class="fl">
+				<a href="/"><img src="https://www.ststephenshabra.com/wp-content/themes/twentyfourteen/images/logo.png" alt="St Stephens Habra Logo" /></a>
+			</div>
+			<div class="rightHeader"><a style="color:#fff" href='#'>Application For Class PRE-NURSERY To IX & XI(HUMANITIES, SCIENCE & COMMERCE) for Session 2021-22</a></div>
+			<div class="clr"></div>
+			<nav class="navigate">
+			<ul>
+
+			   <li><a target="_blank" href='https://stphabra.e-paygate.com/Students/'>Student Login</a></li>
+			  
+			</ul>
+			</nav>
+		</div>
+	</div>
+<div id="main-content" class="main-content">
+
+	<div id="primary" class="content-area">
+		<div id="content" class="site-content" role="main">
+
+			
+<article id="post-4" class="post-4 page type-page status-publish hentry">
+	<header class="entry-header"><h1 class="entry-title">Home</h1></header><!-- .entry-header -->
+	<div class="entry-content">
+		<p><script type="text/javascript">
+    function upArrow() {
+		if($("#mover").css('marginTop') != '0px'){
+			$("#mover").animate({marginTop: '+=70px'}, 'fast');
+		}
+    }
+	function downArrow() {
+		var myUlHeight = 226 - ($("#mover").height());
+		if($("#mover").css('marginTop') > myUlHeight+'px'){		
+			$("#mover").animate({marginTop: '-=70px'}, 'fast');
+		}
+    }
+</script></p>
+<div id="topper" style="display:none;background:rgba(0,0,0,0.85); top:0;left:0;position:fixed;width:100%;height:100%;z-index:9999999999999999999999;">
+<div style="width:980px;margin:0 auto;text-align:center;font-size:18px;padding:10px 0 0 0;color:#f00;">
+			<img style="cursor:pointer;" id="closeTopper" src="https://www.ststephenshabra.com/wp-content/uploads/2017/06/ICSE_2017.jpg" alt="" />
+		</div>
+</p></div>
+<p>	<script type="text/javascript">
+	$(document).ready(function(){
+		$('#closeTopper').click(function(){
+			$('#topper').css('display', 'none');
+		})
+	})
+	</script></p>
+<div class="bodyWrap">
+<div class="slider">
+<div id="slider1_container" style="position: relative; top: 0px; left: 0px; width: 610px; height: 272px; overflow: hidden; ">
+<p>        <!-- Loading Screen --></p>
+<div u="loading" style="position: absolute; top: 0px; left: 0px;">
+<div style="filter: alpha(opacity=70); opacity:0.7; position: absolute; display: block;
+                background-color: #000000; top: 0px; left: 0px;width: 100%;height:100%;">
+            </div>
+<div style="position: absolute; display: block; background: url(https://www.ststephenshabra.com/wp-content/themes/twentyfourteen/images/loader.gif) no-repeat center center;
+                top: 0px; left: 0px;width: 100%;height:100%;">
+            </div>
+</p></div>
+<p>        <!-- Slides Container --></p>
+<div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 610px; height: 272px; overflow: hidden;">
+<div>
+                <img u="image" src="https://www.ststephenshabra.com/wp-content/themes/twentyfourteen/images/slide01.jpg" />
+            </div>
+<div>
+                <img u="image" src="https://www.ststephenshabra.com/wp-content/themes/twentyfourteen/images/slide02.jpg" />
+            </div>
+<div>
+                <img u="image" src="https://www.ststephenshabra.com/wp-content/themes/twentyfourteen/images/slide03.jpg" />
+            </div>
+</p></div>
+<p>        <!--#region Bullet Navigator Skin Begin --></p>
+<style>
+            /* jssor slider bullet navigator skin 05 css */
+            /*
+            .jssorb05 div           (normal)
+            .jssorb05 div:hover     (normal mouseover)
+            .jssorb05 .av           (active)
+            .jssorb05 .av:hover     (active mouseover)
+            .jssorb05 .dn           (mousedown)
+            */
+            .jssorb05 {
+                position: absolute;
+            }
+            .jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {
+                position: absolute;
+                /* size of bullet elment */
+                width: 16px;
+                height: 16px;
+                background: url(https://www.ststephenshabra.com/wp-content/themes/twentyfourteen/images/b05.png) no-repeat;
+                overflow: hidden;
+                cursor: pointer;
+            }
+            .jssorb05 div { background-position: -7px -7px; }
+            .jssorb05 div:hover, .jssorb05 .av:hover { background-position: -37px -7px; }
+            .jssorb05 .av { background-position: -67px -7px; }
+            .jssorb05 .dn, .jssorb05 .dn:hover { background-position: -97px -7px; }
+        </style>
+<p>        <!-- bullet navigator container --></p>
+<div u="navigator" class="jssorb05" style="bottom: 16px; right: 6px;">
+            <!-- bullet navigator item prototype --></p>
+<div u="prototype"></div>
+</p></div>
+<p>        <!--#endregion Bullet Navigator Skin End --></p>
+<p>        <!--#region Arrow Navigator Skin Begin --></p>
+<style>
+            /* jssor slider arrow navigator skin 12 css */
+            /*
+            .jssora12l                  (normal)
+            .jssora12r                  (normal)
+            .jssora12l:hover            (normal mouseover)
+            .jssora12r:hover            (normal mouseover)
+            .jssora12l.jssora12ldn      (mousedown)
+            .jssora12r.jssora12rdn      (mousedown)
+            */
+            .jssora12l, .jssora12r {
+                display: block;
+                position: absolute;
+                /* size of arrow element */
+                width: 30px;
+                height: 46px;
+                cursor: pointer;
+                background: url(../img/a12.png) no-repeat;
+                overflow: hidden;
+            }
+            .jssora12l { background-position: -16px -37px; }
+            .jssora12r { background-position: -75px -37px; }
+            .jssora12l:hover { background-position: -136px -37px; }
+            .jssora12r:hover { background-position: -195px -37px; }
+            .jssora12l.jssora12ldn { background-position: -256px -37px; }
+            .jssora12r.jssora12rdn { background-position: -315px -37px; }
+        </style>
+<p>        <!-- Arrow Left 
+        <span u="arrowleft" class="jssora12l" style="top: 123px; left: 0px;">
+        </span>--><br />
+        <!-- Arrow Right 
+        <span u="arrowright" class="jssora12r" style="top: 123px; right: 0px;">
+        </span>--><br />
+        <!--#endregion Arrow Navigator Skin End -->
+    </div>
+</div>
+<div class="noticeSection">
+<h1>Notice Board</h1>
+<h2 style="color:#000;font-size: 14px;"><a style="font-size: 12px;" href="?page_id=438">Archive</a> »</h2>
+<div style="height:216px;overflow:hidden;margin-top: 10px;">
+<ul id="mover">
+	    </p>
+</ul></div>
+<div style="width:24px;height:24px;position:absolute;margin:-214px 0 0 312px;"><a onclick="upArrow();" href="javascript:void(0);"><img src="https://www.ststephenshabra.com/wp-content/themes/twentyfourteen/images/uparrow.png" alt="" /></a></div>
+<div style="width:24px;height:24px;position:absolute;margin:-20px 0 0 312px;"><a onclick="downArrow();" href="javascript:void(0);"><img src="https://www.ststephenshabra.com/wp-content/themes/twentyfourteen/images/downarrow.png" alt="" /></a></div>
+</div>
+<div class="clr"></div>
+</div>
+<div class="secondStrip">
+<div class="secondStripContentWrap">
+<ul>
+<ul>
+<li class="first">
+<h1>Vission &amp; Mission</h1>
+<p><img src="https://www.ststephenshabra.com/wp-content/themes/twentyfourteen/images/secondStripImg01.jpg" alt="" /></p>
+<p>Christian missionaries without a doubt are the pioneers of modern education in India. Their single minded mission of education and enlightenment for the masses &#8230;</p>
+<p><a href="?page_id=24">Know more..</a></li>
+<li>
+<h1>Faculty</h1>
+<p><img src="https://www.ststephenshabra.com/wp-content/themes/twentyfourteen/images/secondStripImg02.jpg" alt="" /></p>
+<p>The school is endowed with the educationally and professionally qualified teaching staff, who aims to render a complete quality education to all the students &#8230;</p>
+<p><a href="?page_id=450">Know more..</a></li>
+<li>
+<h1>Teaching &amp; Curriculum</h1>
+<p><img src="https://www.ststephenshabra.com/wp-content/themes/twentyfourteen/images/secondStripImg03.jpg" alt="" /></p>
+<p>St. Stephen&#8217;s School, Habra is probably the only school in its immediate vicinity that is gradually blooming into a multifaceted institution. Our next step is &#8230;</p>
+<p><a href="?page_id=31">Know more..</a></li>
+<li>
+<h1>Admission Procedure</h1>
+<p><img src="https://www.ststephenshabra.com/wp-content/themes/twentyfourteen/images/secondStripImg04.jpg" alt="" /></p>
+<p>The largest intake is generally in the Nursery Class presently conducted on the basis of an interview of short-listed candidates, from among those who have submitted the &#8230;</p>
+<p><a href="?page_id=38">Know more..</a></li>
+</ul>
+</ul>
+<div class="clr"></div>
+</div>
+</div>
+<div class="bodyContentWrap">
+<div class="bodyContentLeft">
+<h2>Welcome to our site</h2>
+<p class="first"><img class="welcome" src="https://www.ststephenshabra.com/wp-content/themes/twentyfourteen/images/welcome.jpg" alt="" />A school is an institution designed for the teaching of students under the direction of teachers. Most countries have systems of formal education, which is commonly compulsory. In these systems, students progress through a series of schools.</p>
+<p>The names for these schools vary by country, but generally include primary school for young children and secondary school for teenagers who have completed primary education.</p>
+<p>An institution where higher education is taught, is commonly called a university college or university. The names for these schools vary by country, but generally include primary school for young children and secondary school for teenagers who have completed primary education.</p>
+</div>
+<div class="principalsDesk">
+<h1>Principal&#8217;s Desk</h1>
+<p><img src="https://www.ststephenshabra.com/wp-content/themes/twentyfourteen/images/principalsDesk.jpg" alt="" /><br />
+<strong style="font-style: italic;color:#c00!important;" class="black">Mr. HIRAK K. MANDAL</strong></p>
+<p>“Education is not the filling of a bucket, but the lighting of a fire” W B Yeats. For, it is a quote, but it is an engraved conscious response of all the students of St. Stephen’s School, Habra.</p>
+<p>The School is a place where children are encouraged to say “I see it, I get it, I can do it.”</p>
+<p>Our philosophy of education has always been meeting the needs of the individual child &#8230;</p>
+<p><a href="?page_id=43">Know more..</a></p>
+</div>
+<div class="clr"></div>
+<div style="border-bottom: 1px solid #ccc;"></div>
+<div class="quickLinksSection">
+<h3>Quick Links</h3>
+<p><a href="?page_id=43">Principal&#8217;s Message</a> | <a href="?page_id=31">Teaching and Curriculum</a> | <a href="?page_id=38">Admission Procedure</a> | <a href="?page_id=48">School Curriculum</a> | <a href="?page_id=50">Examination System</a> | <a href="?page_id=286#schlfees">School Fees</a> | <a href="?page_id=286#schlUnifrm">School Uniform</a> | <a href="?page_id=286#schlTmeSchdl">School &amp; Office Time Schedule</a> | <a href="?page_id=286#infoTC">Information Regarding Transfer Certificate</a> | <a href="?page_id=120">Contact Us</a></p>
+<h3>
+<a class="btnp" href="https://ststephenshabra.e-campus.co.in/">e-campus</a><br />
+</h3>
+</div>
+<div class="gallerySection">
+<h2>Our Gallery | <a href="?page_id=77">View all</a></h2>
+<p style="height: 125px;"><iframe style="border: none; width: 330px; height: 150px;" src="https://www.ststephenshabra.com/wp-content/themes/twentyfourteen/lightSlider/index.html" width="300" height="150"></iframe></p>
+<style>
+.btnp
+        {
+            background: #32d932;
+            background-image: -webkit-linear-gradient(top, #32d932, #2bb840);
+            background-image: -moz-linear-gradient(top, #32d932, #2bb840);
+            background-image: -ms-linear-gradient(top, #32d932, #2bb840);
+            background-image: -o-linear-gradient(top, #32d932, #2bb840);
+            background-image: linear-gradient(to bottom, #32d932, #2bb840);
+            -webkit-border-radius: 5;
+            -moz-border-radius: 5;
+            border-radius: 5px;
+            text-shadow: 1px 1px 3px #666666;
+            font-family: Arial;
+            color: #ffffff;
+            font-size: 20px;
+            padding: 10px 20px 10px 20px;
+            text-decoration: none;
+        }
+        .btnp:hover
+        {
+            background: #fcc63c;
+            background-image: -webkit-linear-gradient(top, #fcc63c, #fcc63c);
+            background-image: -moz-linear-gradient(top, #fcc63c, #fcc63c);
+            background-image: -ms-linear-gradient(top, #fcc63c, #fcc63c);
+            background-image: -o-linear-gradient(top, #fcc63c, #fcc63c);
+            background-image: linear-gradient(to bottom, #fcc63c, #fcc63c);
+            text-decoration: none;
+            cursor:pointer;
+        }
+    </style>
+</div>
+</div>
+	</div><!-- .entry-content -->
+</article><!-- #post-## -->
+
+<div id="comments" class="comments-area">
+
+	
+	
+</div><!-- #comments -->
+
+		</div><!-- #content -->
+	</div><!-- #primary -->
+	</div><!-- #main-content -->
+
+<div id="secondary">
+	
+	
+	</div><!-- #secondary -->
+<div class="clr"></div>
+	<div class="footerMain">
+		<div class="footerInner">
+		<p>&copy; Copyright 2021 St. Stephen's School, Habra, All rights reserved. | <a class="comware"  href="https://itspectrumsolutions.com/" target="_blank">Website Design</a> by <strong >ITSpectrum Solutions Private Limited</strong></p>
+		
+		</div>	
+	</div>	
+</body>
+</html>
